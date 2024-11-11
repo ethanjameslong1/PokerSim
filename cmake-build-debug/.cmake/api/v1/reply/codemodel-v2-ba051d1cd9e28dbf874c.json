@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/ethan/CLionProjects/Poker/cmake-build-debug",
-		"source" : "C:/Users/ethan/CLionProjects/Poker"
+		"build" : "C:/Users/ethan/Documents/GitHub/EthanGrowth/cmake-build-debug",
+		"source" : "C:/Users/ethan/Documents/GitHub/EthanGrowth"
 	},
 	"version" : 
 	{

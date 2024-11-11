@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/ethan/CLionProjects/Poker/cmake-build-debug"
+			"value" : "c:/Users/ethan/Documents/GitHub/EthanGrowth/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/ethan/CLionProjects/Poker/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/ethan/Documents/GitHub/EthanGrowth/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/ethan/CLionProjects/Poker"
+			"value" : "C:/Users/ethan/Documents/GitHub/EthanGrowth"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1279,7 +1279,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/ethan/CLionProjects/Poker/cmake-build-debug"
+			"value" : "C:/Users/ethan/Documents/GitHub/EthanGrowth/cmake-build-debug"
 		},
 		{
 			"name" : "Poker_IS_TOP_LEVEL",
@@ -1303,7 +1303,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/ethan/CLionProjects/Poker"
+			"value" : "C:/Users/ethan/Documents/GitHub/EthanGrowth"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
