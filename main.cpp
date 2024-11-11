@@ -12,8 +12,6 @@ int main()
     Player ethan = Player();
     myDeck.deal(ethan,2);
 
-
-
     std::cout<<"Ethan's hand, 2 cards dealt: \n";
     ethan.printHand();
 
@@ -24,6 +22,8 @@ int main()
     std::cout<<"\n\nDeck after dealing 4 cards:\n";
     myDeck.printDeck();
     myDeck.shuffle();
+    std::cout<<"\nShuffled again\n";
+
     myDeck.printDeck();
 
     return 0;
