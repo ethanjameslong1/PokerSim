@@ -9,9 +9,11 @@
 class Player {
 private:
   std::vector<Card> *hand;
+  unsigned int chips;
 public:
+  std::string name;
   void printHand();
-  Player() {hand = new std::vector<Card>;};
+  Player(const unsigned int chipNum,std::string title) {hand = new std::vector<Card>; chips=chipNum; name=title;};
   void addCard(Card c);
 };
 

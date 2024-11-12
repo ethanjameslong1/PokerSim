@@ -9,4 +9,6 @@ add_executable(Poker main.cpp
         Player.cpp
         Player.h
         Card.cpp
-        Card.h)
+        Card.h
+        Game.cpp
+        Game.h)

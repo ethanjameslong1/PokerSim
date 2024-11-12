@@ -73,6 +73,12 @@ build CMakeFiles/Poker.dir/Card.cpp.obj: CXX_COMPILER__Poker_unscanned_Debug C$:
   OBJECT_DIR = CMakeFiles\Poker.dir
   OBJECT_FILE_DIR = CMakeFiles\Poker.dir
 
+build CMakeFiles/Poker.dir/Game.cpp.obj: CXX_COMPILER__Poker_unscanned_Debug C$:/Users/ethan/Documents/GitHub/EthanGrowth/Game.cpp || cmake_object_order_depends_target_Poker
+  DEP_FILE = CMakeFiles\Poker.dir\Game.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Poker.dir
+  OBJECT_FILE_DIR = CMakeFiles\Poker.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Poker
@@ -81,7 +87,7 @@ build CMakeFiles/Poker.dir/Card.cpp.obj: CXX_COMPILER__Poker_unscanned_Debug C$:
 #############################################
 # Link the executable Poker.exe
 
-build Poker.exe: CXX_EXECUTABLE_LINKER__Poker_Debug CMakeFiles/Poker.dir/main.cpp.obj CMakeFiles/Poker.dir/Deck.cpp.obj CMakeFiles/Poker.dir/Player.cpp.obj CMakeFiles/Poker.dir/Card.cpp.obj
+build Poker.exe: CXX_EXECUTABLE_LINKER__Poker_Debug CMakeFiles/Poker.dir/main.cpp.obj CMakeFiles/Poker.dir/Deck.cpp.obj CMakeFiles/Poker.dir/Player.cpp.obj CMakeFiles/Poker.dir/Card.cpp.obj CMakeFiles/Poker.dir/Game.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Poker.dir
