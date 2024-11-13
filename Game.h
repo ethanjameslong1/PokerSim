@@ -19,12 +19,12 @@ class Game
   {
     players = group;
     gameType = gameType;
+    deck = Deck();
   }
 
   void playGame();
 private:
   void playTexasHoldEm(unsigned int blind);
-  void playerOption();
 };
 
 
