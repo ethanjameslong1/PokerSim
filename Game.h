@@ -18,7 +18,7 @@ class Game
   Game(const std::vector<Player> &group,char gameType): table(Player(0,"The Table"))
   {
     players = group;
-    gameType = gameType;
+    this->gameType = gameType;
     deck = Deck();
   }
 

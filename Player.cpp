@@ -21,7 +21,7 @@ void Player::addCard(Card c)
   (*hand).push_back(c);
 }
 
-bool Player::giveChips(unsigned int chipNum, Player player)
+bool Player::giveChips(unsigned int chipNum, Player &player)
 {
   if (chips>chipNum)
   {

@@ -6,66 +6,69 @@
 #include "Card.h"
 #include <iostream>
 
-Deck::Deck()
+Deck::Deck(int numDecks)
 {
     shuffled = false;
     Card *temp;
-    for (int i = 2; i <= 9; i++) {
-        temp = new Card('s', i);
+    for (int i = 0; i < numDecks; i++)
+    {
+        for (int i = 2; i <= 9; i++) {
+            temp = new Card('s', i);
+            cards.push_back(*temp);
+        }
+        temp = new Card('s', 't');
+        cards.push_back(*temp);
+        temp = new Card('s', 'w');
+        cards.push_back(*temp);
+        temp = new Card('s', 'x');
+        cards.push_back(*temp);
+        temp = new Card('s', 'y');
+        cards.push_back(*temp);
+        temp = new Card('s', 'z');
+        cards.push_back(*temp);
+        for (int i = 2; i <= 9; i++) {
+            temp = new Card('h', i);
+            cards.push_back(*temp);
+        }
+        temp = new Card('h', 't');
+        cards.push_back(*temp);
+        temp = new Card('h', 'w');
+        cards.push_back(*temp);
+        temp = new Card('h', 'x');
+        cards.push_back(*temp);
+        temp = new Card('h', 'y');
+        cards.push_back(*temp);
+        temp = new Card('h', 'z');
+        cards.push_back(*temp);
+        for (int i = 2; i <= 9; i++) {
+            temp = new Card('c', i);
+            cards.push_back(*temp);
+        }
+        temp = new Card('c', 't');
+        cards.push_back(*temp);
+        temp = new Card('c', 'w');
+        cards.push_back(*temp);
+        temp = new Card('c', 'x');
+        cards.push_back(*temp);
+        temp = new Card('c', 'y');
+        cards.push_back(*temp);
+        temp = new Card('c', 'z');
+        cards.push_back(*temp);
+        for (int i = 2; i <= 9; i++) {
+            temp = new Card('d', i);
+            cards.push_back(*temp);
+        }
+        temp = new Card('d', 't');
+        cards.push_back(*temp);
+        temp = new Card('d', 'w');
+        cards.push_back(*temp);
+        temp = new Card('d', 'x');
+        cards.push_back(*temp);
+        temp = new Card('d', 'y');
+        cards.push_back(*temp);
+        temp = new Card('d', 'z');
         cards.push_back(*temp);
     }
-    temp = new Card('s', 't');
-    cards.push_back(*temp);
-    temp = new Card('s', 'w');
-    cards.push_back(*temp);
-    temp = new Card('s', 'x');
-    cards.push_back(*temp);
-    temp = new Card('s', 'y');
-    cards.push_back(*temp);
-    temp = new Card('s', 'z');
-    cards.push_back(*temp);
-    for (int i = 2; i <= 9; i++) {
-        temp = new Card('h', i);
-        cards.push_back(*temp);
-    }
-    temp = new Card('h', 't');
-    cards.push_back(*temp);
-    temp = new Card('h', 'w');
-    cards.push_back(*temp);
-    temp = new Card('h', 'x');
-    cards.push_back(*temp);
-    temp = new Card('h', 'y');
-    cards.push_back(*temp);
-    temp = new Card('h', 'z');
-    cards.push_back(*temp);
-    for (int i = 2; i <= 9; i++) {
-        temp = new Card('c', i);
-        cards.push_back(*temp);
-    }
-    temp = new Card('c', 't');
-    cards.push_back(*temp);
-    temp = new Card('c', 'w');
-    cards.push_back(*temp);
-    temp = new Card('c', 'x');
-    cards.push_back(*temp);
-    temp = new Card('c', 'y');
-    cards.push_back(*temp);
-    temp = new Card('c', 'z');
-    cards.push_back(*temp);
-    for (int i = 2; i <= 9; i++) {
-        temp = new Card('d', i);
-        cards.push_back(*temp);
-    }
-    temp = new Card('d', 't');
-    cards.push_back(*temp);
-    temp = new Card('d', 'w');
-    cards.push_back(*temp);
-    temp = new Card('d', 'x');
-    cards.push_back(*temp);
-    temp = new Card('d', 'y');
-    cards.push_back(*temp);
-    temp = new Card('d', 'z');
-    cards.push_back(*temp);
 }
 
 void Deck::shuffle()

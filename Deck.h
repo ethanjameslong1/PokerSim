@@ -15,7 +15,7 @@ protected:
     std::vector<Card> cards;
 public:
     bool shuffled;
-    Deck();
+    Deck(int numDecks=1);
     void shuffle();
     void printDeck() const;
     void deal(Player player,int n = 1);

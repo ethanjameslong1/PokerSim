@@ -11,12 +11,13 @@ private:
   std::vector<Card> *hand;
   unsigned int chips;
 public:
+
   unsigned int TplayerOption(std::pair<bool,unsigned int>& playerActive,unsigned int betSize=0);
   std::string name;
   void printHand();
   Player(const unsigned int chipNum,std::string title) {hand = new std::vector<Card>; chips=chipNum; name=title;};
   void addCard(Card c);
-  bool giveChips(unsigned int chipNum, Player player);
+  bool giveChips(unsigned int chipNum, Player &player);
 };
 
 

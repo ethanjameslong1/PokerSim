@@ -4,6 +4,7 @@
 
 #include "Game.h"
 
+
 void Game::playGame()
 {
   switch (gameType)
@@ -22,7 +23,7 @@ void Game::playTexasHoldEm(unsigned int blind)
 {
   int gameSize = players.size();
   std::pair<bool,unsigned int> active[gameSize];
-  std::fill(active[0],active[players.size()-1],std::make_pair(true,(unsigned int)0));
+  std::fill(active,active+gameSize,std::make_pair(true,(unsigned int)0));
   int buttonNum=0;
   unsigned int currentBet=blind;
   unsigned int hold[players.size()];
@@ -35,15 +36,12 @@ void Game::playTexasHoldEm(unsigned int blind)
   }
 
   std::cout<<players[buttonNum+2].name;
-  currentBet = TplayerOption(active[buttonNum+2],currentBet);
+
+  currentBet = players[buttonNum+2].TplayerOption(active[buttonNum+2],currentBet);
   std::cout<<"\n\n";
   std::cout<<players[buttonNum+3].name;
-  currentBet = TplayerOption(active[buttonNum+3],currentBet);
+  currentBet = players[buttonNum+3].TplayerOption(active[buttonNum+3],currentBet);
 
 }
 
-
-
-
-}
 
