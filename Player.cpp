@@ -6,6 +6,11 @@
 
 #include <iostream>
 
+void Player::clearHand()
+{
+  hand = nullptr;
+}
+
 void Player::printHand()
 {
   for (int i=0;i<(*hand).size()-1;i++)
@@ -35,47 +40,75 @@ bool Player::giveChips(unsigned int chipNum, Player &player)
 
 unsigned int Player::TplayerOption(std::pair<bool,unsigned int>& playerActive,unsigned int betSize)
 {
-  if(!playerActive.first) {std::cout<<"Player is not active, next player!"; return 0;}
+  if(!playerActive.first) {std::cout<<"Player is not active, next player!"; return betSize;}
   char option;
-  std::cout<<"'s Options: \nF: Fold, C: Call "<<betSize;
+  if (chips<=betSize)
+  {
+    std::cout<<name<<" do you want to go all in for "<<chips<<"? (y or n)";
+    std::cin>>option;
+    while (tolower(option)!='y' && tolower(option)!='n')
+    {
+      std::cout<<"Please enter a valid option! (y or n)";
+    }
+    if (tolower(option)=='y')
+    {
+      std::cout<<"We have an all in!";
+      chips = 0;
+      playerActive.second = chips;
+      return betSize;
+    }
+  }
+  std::cout<<name<<"'s Options: \nF: Fold, C: Call "<<betSize;
   std::cout<<", R: Raise\n";
   do
   {
     std::cout<<"Enter Option (C,R,F): ";
     std::cin>>option;
   }  while (!(toupper(option) == 'F' || toupper(option) == 'R' || toupper(option) == 'C'));
-  do
-  {
+
     switch(toupper(option))
     {
       case 'F':
         playerActive.first=false;
-      return 0;
+        return betSize;
       case 'C':
         chips-=betSize;
-      playerActive.second = betSize;
-      return betSize;
+        playerActive.second = betSize;
+        return betSize;
       case 'R':
         std::cout<<"How much?: \n";
         unsigned int raiseSize;
         std::cin>>raiseSize;
-        while (raiseSize<betSize*2)
+        if (raiseSize>chips || chips<raiseSize*2)
         {
-          std::cout<<"Must be atleast "<<betSize*2<<"\nEnter: ";
-          std::cin>>raiseSize;
-        }
-        if (raiseSize>chips)
-        {
-        //std::cout<<"All in for "<<chips<<"?";
-        std::cout<<"Not Enough Chips! Select a new option.\n";
+          std::cout<<"All in for "<<chips<<"? (y or f (fold))";
           std::cin>>option;
-          while (!(toupper(option) == 'F' || toupper(option) == 'R' || toupper(option) == 'C')) { "\nF,R,C!!\n"; std::cin>>option; }
+          while (tolower(option)!='f' && tolower(option)!='y')
+          {
+            std::cout<<"Y or F please!";
+            std::cin>>option;
+          }
+          if(option=='y')
+          {
+            return chips;
+            chips=0;
+          }
+          else
+          {
+            playerActive.first=false;
+            return betSize;
+          }
         }
-      else
-      {
-        chips-=raiseSize;
-        return raiseSize;
-      }
+        else
+        {
+          while (raiseSize<betSize*2)
+          {
+            std::cout<<"Must be atleast "<<betSize*2<<"\nEnter: ";
+            std::cin>>raiseSize;
+          }
+
+          chips-=raiseSize;
+          return raiseSize;
+        }
     }
-  } while (option != 'G');
 }

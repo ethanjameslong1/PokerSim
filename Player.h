@@ -8,7 +8,7 @@
 #include "Card.h"
 class Player {
 private:
-  std::vector<Card> *hand;
+  std::vector<Card> * hand;
   unsigned int chips;
 public:
 
@@ -17,6 +17,7 @@ public:
   void printHand();
   Player(const unsigned int chipNum,std::string title) {hand = new std::vector<Card>; chips=chipNum; name=title;};
   void addCard(Card c);
+  void clearHand();
   bool giveChips(unsigned int chipNum, Player &player);
 };
 

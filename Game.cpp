@@ -22,26 +22,33 @@ void Game::playGame()
 void Game::playTexasHoldEm(unsigned int blind)
 {
   int gameSize = players.size();
+  bool newRoundFlag=true;
+  bool betsOff;
+  bool playing=true;
   std::pair<bool,unsigned int> active[gameSize];
-  std::fill(active,active+gameSize,std::make_pair(true,(unsigned int)0));
-  int buttonNum=0;
+  int blindNum=0;
   unsigned int currentBet=blind;
-  unsigned int hold[players.size()];
-  Player * button = &players[buttonNum];
-  if (!players[buttonNum+1].giveChips(blind,table)) active[buttonNum+1].first=false;
+  unsigned int hold[gameSize];
+  Player * button = &players[blindNum];
 
-  for (int i=0;i<gameSize;i++)
+  while(playing)
   {
-    deck.deal(players[i],2);
+    if(newRoundFlag)
+    {
+      std::fill(active,active+gameSize,std::make_pair(true,(unsigned int)0));
+      if (!players[blindNum].giveChips(blind,table)) active[blindNum].first=false;
+      for (int i=0;i<gameSize;i++)
+      {
+        players[i].clearHand();
+        deck.deal(players[i],2);
+      }
+    }
+    //pre-flop
+    for (int i=0;i<gameSize;i++)
+    {
+
+    }
   }
 
-  std::cout<<players[buttonNum+2].name;
-
-  currentBet = players[buttonNum+2].TplayerOption(active[buttonNum+2],currentBet);
-  std::cout<<"\n\n";
-  std::cout<<players[buttonNum+3].name;
-  currentBet = players[buttonNum+3].TplayerOption(active[buttonNum+3],currentBet);
 
 }
-
-

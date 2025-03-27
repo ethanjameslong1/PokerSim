@@ -73,6 +73,8 @@ Deck::Deck(int numDecks)
 
 void Deck::shuffle()
 {
+    for (int i=0; i<cards.size(); i++)
+        cards[i].dealt=false;
     srand(time(0));
     for (int i = 0; i < cards.size(); i++)
     {
